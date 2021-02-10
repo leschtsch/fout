@@ -1,1 +1,1 @@
-$\Delta _{\psi} X  = \sqrt{\langle X^2 \rangle_{\psi}-\langle X \rangle_{\psi}  ^ 2}  $
+$ \Delta _{\psi} X  = \sqrt{\langle X^2 \rangle_{\psi}-\langle X \rangle_{\psi}  ^ 2}$
