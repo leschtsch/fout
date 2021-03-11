@@ -7,8 +7,8 @@ pygame.display.set_caption('Quick Start')
 window_surface = pygame.display.set_mode((800, 600))
 
 screen = pygame.image.load("files/ground.jpg")
-#screen = pygame.Surface((800, 600))
-#screen.fill([59, 70, 115])
+# screen = pygame.Surface((800, 600))
+# screen.fill([59, 70, 115])
 
 manager = pygame_gui.UIManager((800, 600), 'files/descr1.json')
 # кнопки
@@ -29,23 +29,25 @@ theme_drop = pygame_gui.elements.ui_drop_down_menu.UIDropDownMenu(options_list=t
                                                                   starting_option=themes[0],
                                                                   relative_rect=pygame.Rect(0, 200, 170, 40),
                                                                   manager=manager)
-texts = pygame_gui.elements.UITextBox(html_text="Ничего нет", relative_rect=pygame.Rect(200, 50, 550, 350), manager=manager)
-#answ = pygame_gui.elements.ui_text_entry_line.UITextEntryLine(relative_rect=pygame.Rect(200, 200, 200, 200), manager=manager, text_image_rect=pygame.Rect(200,200,200,200))
-#answ.set_text("hi")
+texts = pygame_gui.elements.UITextBox(html_text="Ничего нет", relative_rect=pygame.Rect(200, 50, 550, 350),
+                                      manager=manager)
+# answ = pygame_gui.elements.ui_text_entry_line.UITextEntryLine(relative_rect=pygame.Rect(200, 200, 200, 200), manager=manager, text_image_rect=pygame.Rect(200,200,200,200))
+# answ.set_text("hi")
 clock = pygame.time.Clock()
 is_running = True
 theme = themes[0]
 
-def load_gen(subj, theme):   # запуск генератора
+
+def load_gen(subj, theme):  # запуск генератора
     os.startfile("C:/Users/Xiaomi/Documents/school/ProjGens/Subjects/" + subj + "/" + theme)
 
 
-def draw(subj, theme):   # переотрисовка окна
+def draw(subj, theme):  # переотрисовка окна
     global themes, texts
-    #pygame.draw.rect(screen, (0, 0, 0), (150, 100, 500, 400), 4)
+    # pygame.draw.rect(screen, (0, 0, 0), (150, 100, 500, 400), 4)
     y = 120
     if len(themes) > 0:
-        #print(theme)
+        # print(theme)
         demo_file = open(r"Subjects/" + subj + "/" + str(theme), encoding='utf-8')
         text = ""
         for i in demo_file:
@@ -54,7 +56,8 @@ def draw(subj, theme):   # переотрисовка окна
                 story = i.split("# &")[1]
                 story = story.split('\n')[0]
                 text += story
-        texts = pygame_gui.elements.UITextBox(html_text=text, relative_rect=pygame.Rect(200, 50, 550, 350), manager=manager)
+        texts = pygame_gui.elements.UITextBox(html_text=text, relative_rect=pygame.Rect(200, 50, 550, 350),
+                                              manager=manager)
         demo_file.close()
 
     else:
@@ -73,17 +76,19 @@ while is_running:  # основной цикл
         if event.type == pygame.USEREVENT:  # события
             if event.user_type == pygame_gui.UI_BUTTON_PRESSED:
                 if event.ui_element == gen_button:
-                    #screen.fill(pygame.Color('#FFFFFF'))
+                    # screen.fill(pygame.Color('#FFFFFF'))
                     if len(themes) > 0:
                         load_gen(subj, theme)
             if event.user_type == pygame_gui.UI_DROP_DOWN_MENU_CHANGED:
-                #screen.fill(pygame.Color('#FFFFFF'))
+                # screen.fill(pygame.Color('#FFFFFF'))
                 if event.ui_element == subj_drop:
                     theme_drop.kill()
                     themes = os.listdir("Subjects/" + event.text)
                     theme_drop = pygame_gui.elements.ui_drop_down_menu.UIDropDownMenu(options_list=themes,
                                                                                       starting_option=themes[0],
-                                                                                      relative_rect=pygame.Rect(0, 200, 170, 40),
+                                                                                      relative_rect=pygame.Rect(0, 200,
+                                                                                                                170,
+                                                                                                                40),
                                                                                       manager=manager)
                     theme = themes[0]
                     subj = event.text

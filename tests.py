@@ -1,9 +1,31 @@
-name = win32print.GetDefaultPrinter() # verify that it matches with the name of your printer
-printdefaults = {"DesiredAccess": win32print.PRINTER_ALL_ACCESS} # Doesn't work with PRINTER_ACCESS_USE
-handle = win32print.OpenPrinter(name, printdefaults)
-level = 2
-attributes = win32print.GetPrinter(handle, level)
-attributes['pDevMode'].Duplex = 1  #no flip
-win32print.SetPrinter(handle, level, attributes, 0)
-win32print.GetPrinter(handle, level)['pDevMode'].Duplex
-win32api.ShellExecute(0,'print','C:\\aaa.txt','.','/manualstoprint',0)
+# -*- coding: utf-8 -*-
+"""
+This demo is tex_demo.py modified to have unicode. See that file for
+more information.
+"""
+
+import matplotlib
+
+matplotlib.rcParams['text.usetex'] = True
+import matplotlib.pyplot as plt
+
+plt.figure(1, figsize=(10, 10))
+ax = plt.axes([0.0, 0.0, 1, 1])
+
+# plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
+matplotlib.rcParams['text.latex.preamble'] = r'\usepackage{amsmath}'
+
+s = r'''
+$\left[ \begin{gathered} x \\ b \end{gathered} \right.$
+'''
+
+ax.text(0.5, 0.5, s,
+        horizontalalignment='center',
+        verticalalignment='center',
+        fontsize=20, color='black')
+
+plt.xlabel(r'\textbf{time (s)}')
+plt.ylabel('\\textit{Velocity (m/sec)}', fontsize=16)
+plt.title(s, fontsize=16, color='r')
+plt.show()
+
