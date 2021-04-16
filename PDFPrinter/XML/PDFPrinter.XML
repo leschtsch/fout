@@ -1,0 +1,164 @@
+<converters wizard="PDFPrinter">
+  <convert name="  PRINT   " value="print" image="print" task="print_task" progress="Printing..."/>
+</converters>
+<layout>
+  <browse name="ListBrowse" />
+  <checked name="PDFChecked" />
+</layout>
+<filter>
+  <item ext="pdf" name="Adobe Acrobat Document" image="pdf" />
+</filter>
+<wizard caption="Print PDF" height="480" >
+  <page class="PDFPrinterSelect" caption="Printer" if="PrinterCount<>1" />
+  <page class="Header" caption="Header\Text" />
+  <page class="HeaderImage" caption="Header\Image" />
+  <page class="Footer" caption="Footer\Text" />
+  <page class="FooterImage" caption="Footer\Image" />
+  <page class="PDFOrientation" caption="Orientation" />
+  <page class="PDFTray" caption="Tray" />
+  <page class="PDFPageRange" caption="Pages to print" />
+  <page class="PDFPrintMultipage" caption="Multipage" />
+  <page class="PDFScaling" caption="Scaling" if="wizardShowScaling=true" />
+  <page class="PDFColor" caption="Color" if="IsColor=true" />
+  <page class="PDFPrintQuality" caption="Quality" />
+  <page class="PDFPrintDuplex" caption="Duplex" options="pro" />
+  <page class="PDFPrintSeparator" caption="Separator" if="FileCount<>1" />
+  <page class="PDFPrintFinish" caption="Finish" />
+</wizard>
+<cmd options="no_destination">
+  <key name="p" property="PrinterName" desc="Friendly printer name (or part of the name)" />
+  <key name="rn" property="Range" desc="Print a set range of pages" />
+  <key name="t" property="JobTitle" desc="Job title (listed in the Windows Printer Manager)" />
+  <key name="-ChPaper" property="ChoosePaperSource" desc="Choose paper source by PDF papersize" />
+
+  <key name="NumCopy" property="Copies" desc="How many copies to print" />
+  <key name="-ar" property="AutoRotate" desc="Select orientation base on paper dimensions" />
+  <key name="-mb" property="MediaBox" desc="Draw Media Box" />
+  <key name="o" property="Orientation" desc="Set paper orientation">
+    <subkey name="(p)ortrait" value="potPortrait" desc="portrait" />
+    <subkey name="(l)andscape" value="potLandScape" desc="landscape" />
+  </key>
+  <key name="d" property="DuplexPrintingMode" desc="Set Duplex Printing Mode">
+    <subkey name="(n)one" value="dpmNone" desc="None" />
+    <subkey name="(v)ertical" value="dpmVertical" desc="Vertical" />
+    <subkey name="(h)orizontal" value="dpmHorizontal" desc="Horizontal" />
+  </key>
+  <key name="q" property="PrintQuality" desc="Set printer quality">
+    <subkey name="(h)igh" value="pqHigh" desc="high" />
+    <subkey name="(m)edium" value="pqMedium" desc="medium" />
+    <subkey name="(l)ow" value="pqLow" desc="low" />
+    <subkey name="(d)raft" value="pqDraft" desc="draft" />
+  </key>
+  <key name="dpi" property="Resolution" desc="Set printer resolution" />
+  <key name="Rotate" property="Rotate" desc="Rotate document (angles)" />
+  <key name="cl" property="Color" desc="For color printers, you can select color mode">
+    <subkey name="(c)olor" value="cmColor" desc="color" />
+    <subkey name="(m)onochrome" value="cmMonochrome" desc="monochrome" />
+  </key>
+  <key name="multipage" property="Multipage.cmdOptionsStr" desc="Print several pages on the sheet Cols x Rows" />
+  <key name="s" property="ScalingStr" desc="Set printer scaling">
+    <subkey name="(n)one" value="psNone" desc="none" />
+    <subkey name="(f)itpage" value="psFitPage" desc="fit page" />
+    <subkey name="n(u)mber" value="" desc="scaling factor, i.e. 1.05 (means 5% larger) or -s 0.5 (half size)" />
+  </key>
+  <key name="ll" property="Log Level" desc="Log Level">
+    <subkey name="(e)rror" value="llError" desc="Log error only" />
+    <subkey name="(i)nfo" value="llAllInfo" desc="Log all information" />
+  </key>
+  <key name="bn" property="PrinterBinName" desc="Printer tray name" />
+  <key name="bi" property="PrinterBinIndex" desc="Printer tray index" />
+  <key name="ps" property="PaperSizeStr" desc="Paper size" >
+    <subkey name="Letter" value="Letter" desc="Letter" />
+    <subkey name="LetterSmall" value="LetterSmall" desc="LetterSmall" />
+    <subkey name="Tabloid" value="Tabloid" desc="Tabloid" />
+    <subkey name="Ledger" value="Ledger" desc="Ledger" />
+    <subkey name="Legal" value="Legal" desc="Legal" />
+    <subkey name="Statement" value="Statement" desc="Statement" />
+    <subkey name="Executive" value="Executive" desc="Executive" />
+    <subkey name="A3" value="A3" desc="A3" />
+    <subkey name="A4" value="A4" desc="A4" />
+    <subkey name="A4Small" value="A4Small" desc="A4Small" />
+    <subkey name="A5" value="A5" desc="A5" />
+    <subkey name="B4" value="B4" desc="B4" />
+    <subkey name="B5" value="B5" desc="B5" />
+    <subkey name="Folio" value="Folio" desc="Folio" />
+    <subkey name="Quarto" value="Quarto" desc="Quarto" />
+    <subkey name="ps10X14" value="ps10X14" desc="ps10X14" />
+    <subkey name="ps11X17" value="ps11X17" desc="ps11X17" />
+    <subkey name="Note" value="Note" desc="Note" />
+    <subkey name="Env10" value="Env10" desc="Env10" />
+    <subkey name="Env11" value="Env11" desc="Env11" />
+    <subkey name="Env12" value="Env12" desc="Env12" />
+    <subkey name="Env14" value="Env14" desc="Env14" />
+    <subkey name="CSheet" value="CSheet" desc="CSheet" />
+    <subkey name="DSheet" value="DSheet" desc="DSheet" />
+    <subkey name="ESheet" value="ESheet" desc="ESheet" />
+    <subkey name="EnvDL" value="EnvDL" desc="EnvDL" />
+    <subkey name="EnvC5" value="EnvC5" desc="EnvC5" />
+    <subkey name="EnvC3" value="EnvC3" desc="EnvC3" />
+    <subkey name="EnvC4" value="EnvC4" desc="EnvC4" />
+    <subkey name="EnvC6" value="EnvC6" desc="EnvC6" />
+    <subkey name="EnvC65" value="EnvC65" desc="EnvC65" />
+    <subkey name="EnvB4" value="EnvB4" desc="EnvB4" />
+    <subkey name="EnvB5" value="EnvB5" desc="EnvB5" />
+    <subkey name="EnvB6" value="EnvB6" desc="EnvB6" />
+    <subkey name="EnvItaly" value="EnvItaly" desc="EnvItaly" />
+    <subkey name="EnvMonarch" value="EnvMonarch" desc="EnvMonarch" />
+    <subkey name="EnvPersonal" value="EnvPersonal" desc="EnvPersonal" />
+    <subkey name="FanfoldUS" value="FanfoldUS" desc="FanfoldUS" />
+    <subkey name="FanfoldStdGerman" value="FanfoldStdGerman" desc="FanfoldStdGerman" />
+    <subkey name="ISOB4" value="ISOB4" desc="ISOB4" />
+    <subkey name="Custom" value="Custom" desc="Custom" />
+  </key>
+  <key name="pm" property="PrintMethod" desc="Select Print Method" />
+
+  <key name="xo" property="xOffset" desc="X Offset (mm)" />
+  <key name="yo" property="yOffset" desc="Y Offset (mm)" />
+
+  <key name="lm" property="LeftMargin" desc="Left margin (mm)" />
+  <key name="tm" property="TopMargin" desc="Top margin (mm)" />
+  <key name="bm" property="BottomMargin" desc="Bottom margin (mm)" />
+  <key name="rm" property="RightMargin" desc="Right margin (mm)" />
+
+  <key name="ap" property="AlignDoc" desc="Align document to paper" >
+    <subkey name="Default" value="agDefault" desc="Center Document on page" />
+    <subkey name="Top" value="agTop" desc="Align Document to top on page" />
+    <subkey name="Bottom" value="agBottom" desc="Align Document to bottom on page" />
+    <subkey name="Right" value="agRight" desc="Align Document to right on page" />
+    <subkey name="Left" value="agLeft" desc="Align Document to left on page" />
+    <subkey name="LeftTop" value="agLeftTop" desc="Align Document to top and left on page" />
+    <subkey name="RightTop" value="agRightTop" desc="Align Document to top and right on page" />
+    <subkey name="LeftBottom" value="agLeftBottom" desc="Align Document to bottom and left on page" />
+    <subkey name="RightBottom" value="agRightBottom" desc="Align Document to bottom and right on page" />
+  </key>
+  <key name="am" property="AlignMargin" desc="Align Document to print margins" >
+    <subkey name="Default" value="agDefault" desc="Center Document on page" />
+    <subkey name="Top" value="agTop" desc="Align Document to top on page" />
+    <subkey name="Bottom" value="agBottom" desc="Align Document to bottom on page" />
+    <subkey name="Right" value="agRight" desc="Align Document to right on page" />
+    <subkey name="Left" value="agLeft" desc="Align Document to left on page" />
+    <subkey name="LeftTop" value="agLeftTop" desc="Align Document to top and left on page" />
+    <subkey name="RightTop" value="agRightTop" desc="Align Document to top and right on page" />
+    <subkey name="LeftBottom" value="agLeftBottom" desc="Align Document to bottom and left on page" />
+    <subkey name="RightBottom" value="agRightBottom" desc="Align Document to bottom and right on page" />
+  </key>
+
+  <key name="sep" property="Separator" desc="Use separator page between printed documents">
+    <subkey name="(n)one" value="psNone" desc="No separator page" />
+    <subkey name="(b)lank" value="psBlank" desc="Blank page" />
+    <subkey name="(d)ocument" value="psDocument" desc="Use PDF document as separator" />
+  </key>
+  <key name="sepdoc" property="SeparatorDocName" desc="Separator PDF document file name" />
+  <key name="seprange" property="SeparatorPageRange" desc="Printed page range for separator PDF document" />
+  <key name="Comment" property="Comment" desc="Comment for print" />
+
+  <key name="-kfs" options="ignore" />
+<!--  <key name="-do" options="ignore" /> -->
+  <key name="c" options="ignore" />
+
+  <include file="CommentCmd" />
+  <example>
+  C:\DOC\PrintDoc.pdf -ps 9x12 -p HP -log c:\Log\Print.txt{br} {font color=gray}It will print PrintDoc.pdf with the custom paper size 9x12 inch on HP printer.{/font}
+  </example>
+</cmd>
+

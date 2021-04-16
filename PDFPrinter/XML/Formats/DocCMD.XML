@@ -1,0 +1,10 @@
+   <key name="dco" property="Doc.CombineOptions" desc="Doc Combine Options">
+    <subkey name="TOC" value="cdoTOC" />
+    <subkey name="EveryFileNewPage" value="cdoEveryFileNewPage" />
+  </key>
+   <key name="ImageOptions" property="JPEG.ImageOptions" desc="Image Combine Options">
+    <subkey name="BreakByPages" value="iffBreakByPages" />
+    <subkey name="OneLongPage" value="iffOneLongPage" />
+    <subkey name="Mosaic" value="iffMosaic" />
+  </key>
+

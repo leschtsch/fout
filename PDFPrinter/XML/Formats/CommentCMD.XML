@@ -1,0 +1,37 @@
+<!--  <key name="-Head:off" property="Title.Header.VisibleOff" desc="Turn off header text" /> -->
+  <key name="HeadText" property="Title.Header.Text" desc="Header text. Where [page] - Page Number and [date] - current date" />
+  <key name="HeadAlign" property="Title.Header.Position" desc="Header align">
+    <subkey name="(l)eft" value="cpLeft" desc="align left" />
+    <subkey name="(r)ight" value="cpRight" desc="align right" />
+    <subkey name="(c)enter" value="cpCenter" desc="align center" />
+  </key>
+  <key name="HeadFont" property="Title.Header.Font.FontCmd" desc="Header font [name,size,color]" />
+  <key name="-HeadFontPDF" property="Title.Header.Font.PDFEmbeddingCmd" desc="Embed header font into PDF" />
+
+<!--  <key name="-Foot:off" property="Title.Footer.VisibleOff" desc="Turn off footer text" /> -->
+  <key name="FootText" property="Title.Footer.Text" desc="Footer text. Where [page] - Page Number and [date] - current date" />
+  <key name="FootAlign" property="Title.Footer.Position" desc="Footer align">
+    <subkey name="(l)eft" value="cpLeft" desc="align left" />
+    <subkey name="(r)ight" value="cpRight" desc="align right" />
+    <subkey name="(c)enter" value="cpCenter" desc="align center" />
+  </key>
+  <key name="FootFont" property="Title.Footer.Font.FontCmd" desc="Footer font [name,size,color]" />
+  <key name="-FootFontPDF" property="Title.Footer.Font.PDFEmbeddingCmd" desc="Embed footer font into PDF" />
+  <key name="HeadImage" property="Title.Header.Image.FileName" desc="Draw picture on the header" />
+  <key name="HeadImageAlign" property="Title.Header.Image.Position" desc="Header image align">
+    <subkey name="(l)eft" value="cpLeft" desc="align left" />
+    <subkey name="(r)ight" value="cpRight" desc="align right" />
+    <subkey name="(c)enter" value="cpCenter" desc="align center" />
+  </key>
+  <key name="HeadImageSize" property="Title.Header.Image.SizeStr" desc="Header image size (inches) [w,h]" />
+  <key name="HeadImageMargins" property="Title.Header.Image.MarginsStr" desc="Header image margins (inches) [x,y]" />
+  <key name="FooterImage" property="Title.Footer.Image.FileName" desc="Draw picture on the footer" />
+  <key name="FooterImageAlign" property="Title.Footer.Image.Position" desc="Footer image align">
+    <subkey name="(l)eft" value="cpLeft" desc="align left" />
+    <subkey name="(r)ight" value="cpRight" desc="align right" />
+    <subkey name="(c)enter" value="cpCenter" desc="align center" />
+  </key>
+  <key name="FooterImageSize" property="Title.Footer.Image.SizeStr" desc="Footer image size (inches) [w,h]" />
+  <key name="FooterImageMargins" property="Title.Footer.Image.MarginsStr" desc="Footer image margins (inches) [x,y]" />
+  <key name="CounterStart" property="Title.Numeration.Start" desc="Start numeration in header/footer from" />
+  <key name="CounterDigits" property="Title.Numeration.Len" desc="Header/footer counter digits" />

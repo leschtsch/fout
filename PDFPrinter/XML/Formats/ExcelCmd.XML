@@ -1,0 +1,48 @@
+  <key name="xml_template" property="CmdXMLTemplate" desc="Template for export to XML" />
+  <key name="sheets" property="Sheets" desc="Specify what sheets in the workbook you need to convert. -Sheets &quote;1-3,5&quote;" />
+  <key name="-cs" property="CombineSheets" desc="Combine Sheets into one file" />
+  <key name="-ExportAll" property="ExportAll" desc="Export all Sheets include hidden" />
+  <key name="-FirstRowIsHeader" property="FirstRowIsHeader" desc="First row contains header" />
+  <key name="td" property="TextDelimiter" desc="Text Delimiter">
+    <subkey name="(N)one" value="tdNone" desc="Use None" />
+    <subkey name="(T)ab" value="tdTab" desc="Use Tab" />
+    <subkey name="(S)pace" value="tdSpace" desc="Use Space" />
+    <subkey name="CSV" value="tdCSV" desc="Use CSV" />
+    <subkey name="(C)omma" value="tdComma" desc="Comma" />
+    <subkey name="Semi" value="tdSemi" desc="Use semicolon" />
+    <subkey name="Other" value="tdOther" desc="Use key -TDO. #ASCII Code - for setup ASCII separator" />
+  </key>
+  <key name="tdo" property="TextDelimiterOther" desc="Text Delimiter Other" />
+  <key name="-Ansi" property="AnsiCodePage" desc="Use Ansi Code Page" />
+  <key name="-UseQuote" property="UseQuote" desc="Use Quote" />
+  <key name="fixlayout" property="FixedColumns.OptionsFile" desc="Text file with columns width for fixed column width export, <column name>=<width>" />
+  <key name="-UseOOFilter" property="UseOO" desc="Use OO Filter" />
+  <key name="ps" property="PDF_PaperSize.Name" desc="Paper Size">
+     <subkey name="A3" value="A3" desc="A3" />
+     <subkey name="A4" value="A4" desc="A4" />
+     <subkey name="A5" value="A5" desc="A5" />
+     <subkey name="B5" value="B5" desc="B5" />
+     <subkey name="Letter" value="Letter" desc="Letter" />
+     <subkey name="Legal" value="Legal" desc="Legal" />
+  </key>
+  <key name="po" property="PDF_PaperSize.Orientation" desc="Paper Orientation">
+    <subkey name="(P)ortrait" value="poPortrait" desc="Portrait" />
+    <subkey name="(L)andscape" value="poLandscape" desc="Landscape" />
+  </key>
+  <key name="-PgSep" property="PageSeparate" desc="Every page into separate file" />
+  <key name="-NoTrim" property="NoTrim" desc="No truncate CSV files" />
+  <key name="-RoundUp" property="RoundUp" desc="Round up to column format" />
+  <key name="maxpages" property="MaxPages" desc="Setup max pages for PDF export" />
+  <key name="ThousandSep" property="ThousandSeparatorStr" desc="Thousand Separator" />
+  <key name="is" property="Picture.SizeCmd" desc="Rendered image (jpeg, png) size &lt;width&gt;x&lt;height&gt;" />
+  <key name="-PrintGridLines" property="PrintGridLines" desc="Print gray grid lines" />
+  <key name="-FontKerning" property="FontKerning" desc="Files with kerning look a little better but are a little bigger too" />
+  <key name="FontMapping" property="FontMapping" desc="Font Mapping">
+     <subkey name="ReplaceStandardFonts" value="ReplaceStandardFonts" desc="Replace standart fonts by internal fonts. (optimum file size/accuracy)" />
+     <subkey name="ReplaceAllFonts" value="ReplaceAllFonts" desc="Replace all fonts by internal fonts. (smaller file size)" />
+     <subkey name="DontReplaceFonts" value="DontReplaceFonts" desc="Do not replace any font. (maximum file size)" />
+  </key>
+  <key name="-PrintToFit" property="PrintToFit" desc="Fit to page" />
+  <key name="PNVP" property="PrintNumberOfVerticalPages" desc="If set, the sheet will be printed on at most this number of vertical pages. Use 0 to have unlimited vertical pages while still limiting the horizontal pages." />
+  <key name="PNHP" property="PrintNumberOfHorizontalPages" desc="If set, the sheet will be printed on at most this number of horizontal pages. Use 0 to have unlimited horizontal pages while still limiting the vertical pages." />
+

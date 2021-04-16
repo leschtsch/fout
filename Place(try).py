@@ -1,6 +1,7 @@
 import pygame
 import pygame_gui
 import os
+import sys
 
 
 def names(subj, theme):
@@ -20,7 +21,8 @@ def load_gen(subj, theme, gen):  # запуск генератора
     print(path)
     if gen != "" and theme != "" and subj != "":
         # os.startfile(path + "/Subjects/" + subj + "/" + theme + "/" + gen)
-        os.system('python "' + path + "\\Subjects\\" + subj + "\\" + theme + "\\" + gen + '"')
+        os.system(sys.executable +
+                  ' "' + path + "\\Subjects\\" + subj + "\\" + theme + "\\" + gen + '"')
 
 
 def draw(subj, theme, gen):  # переотрисовка окна

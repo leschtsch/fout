@@ -1,0 +1,7 @@
+params - 
+    numb(количество заданий, 0, 20);numb(количество заданий, quantity, 1);
+         
+description - Нет описания генератора :( 
+
+
+Generate event got. Params - quantity : 1
